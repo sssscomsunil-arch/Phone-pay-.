@@ -21,13 +21,9 @@ html,body{
   color:#32135d;
 }
 
-body{
-  min-height:100vh;
-}
+body{min-height:100vh;}
 
-button,input{
-  font:inherit;
-}
+button,input{font:inherit;}
 
 button{
   border:0;
@@ -40,11 +36,8 @@ button{
   padding:22px 18px 35px;
 }
 
-.screen.active{
-  display:block;
-}
+.screen.active{display:block;}
 
-/* DEMO LABEL */
 .demo-label{
   display:inline-block;
   background:#ffd83d;
@@ -57,7 +50,6 @@ button{
   margin-bottom:10px;
 }
 
-/* HOME */
 .home{
   text-align:center;
   padding-top:35px;
@@ -137,7 +129,6 @@ button{
   font-size:18px;
 }
 
-/* COMMON CARD */
 .card{
   max-width:650px;
   margin:0 auto;
@@ -167,9 +158,7 @@ button{
   margin:8px 0;
 }
 
-.amount{
-  text-align:right;
-}
+.amount{text-align:right;}
 
 .amount small{
   display:block;
@@ -181,7 +170,6 @@ button{
   font-size:31px;
 }
 
-/* QR */
 .qr-title{
   text-align:center;
   color:#7915c9;
@@ -213,7 +201,6 @@ button{
   margin:16px 0;
 }
 
-/* CODE */
 .code-box{
   border:2px solid #d5b5e4;
   border-radius:18px;
@@ -259,11 +246,8 @@ button{
   font-weight:bold;
 }
 
-.notice.show{
-  display:block;
-}
+.notice.show{display:block;}
 
-/* DEMO HOME */
 .demo-home{
   background:white;
   min-height:100vh;
@@ -310,9 +294,7 @@ button{
   margin:20px auto;
 }
 
-.section h3{
-  color:#43205d;
-}
+.section h3{color:#43205d;}
 
 .service-grid{
   display:grid;
@@ -329,15 +311,12 @@ button{
   color:#5b168a;
 }
 
-/* SEND */
 .title{
   font-size:31px;
   margin:10px 0 25px;
 }
 
-.field{
-  margin-bottom:16px;
-}
+.field{margin-bottom:16px;}
 
 .field label{
   display:block;
@@ -363,7 +342,6 @@ button{
   font-weight:900;
 }
 
-/* BANK */
 .total{
   text-align:center;
   font-size:34px;
@@ -399,13 +377,9 @@ button{
   font-weight:900;
 }
 
-.bank-info{
-  flex:1;
-}
+.bank-info{flex:1;}
 
-.bank-info strong{
-  display:block;
-}
+.bank-info strong{display:block;}
 
 .demo-pay{
   width:100%;
@@ -416,14 +390,9 @@ button{
   font-weight:900;
 }
 
-/* PIN */
-.pin{
-  text-align:center;
-}
+.pin{text-align:center;}
 
-.pin h1{
-  margin-top:40px;
-}
+.pin h1{margin-top:40px;}
 
 .pin-dots{
   display:flex;
@@ -439,9 +408,7 @@ button{
   border-radius:50%;
 }
 
-.dot.on{
-  background:#7420d9;
-}
+.dot.on{background:#7420d9;}
 
 .keypad{
   max-width:360px;
@@ -465,7 +432,6 @@ button{
   color:white;
 }
 
-/* CONNECTING */
 .connect{
   display:flex;
   min-height:85vh;
@@ -488,14 +454,9 @@ button{
   to{transform:scale(1.05)}
 }
 
-.connect h2{
-  margin-top:25px;
-}
+.connect h2{margin-top:25px;}
 
-/* SUCCESS */
-.success{
-  text-align:center;
-}
+.success{text-align:center;}
 
 .check{
   width:90px;
@@ -530,16 +491,13 @@ button{
   font-weight:900;
 }
 
-/* DETAILS */
 .detail-card{
   background:white;
   border-radius:22px;
   padding:22px;
 }
 
-.detail-card h2{
-  color:#168f3d;
-}
+.detail-card h2{color:#168f3d;}
 
 .transaction-id{
   background:#f5eff9;
@@ -548,42 +506,20 @@ button{
   word-break:break-all;
 }
 
-/* MOBILE */
 @media(max-width:500px){
-  .home h1{
-    font-size:36px;
-  }
-
-  .plans{
-    gap:10px;
-  }
-
-  .plan{
-    padding:20px 8px;
-  }
-
-  .plan h2{
-    font-size:17px;
-  }
-
-  .price{
-    font-size:27px;
-  }
-
-  .plan ul{
-    font-size:12px;
-  }
-
-  .actions{
-    grid-template-columns:repeat(2,1fr);
-  }
+  .home h1{font-size:36px;}
+  .plans{gap:10px;}
+  .plan{padding:20px 8px;}
+  .plan h2{font-size:17px;}
+  .price{font-size:27px;}
+  .plan ul{font-size:12px;}
+  .actions{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- 1 HOME -->
 <section id="home" class="screen active">
   <div class="home">
 
@@ -596,7 +532,6 @@ button{
 
       <div class="plan">
         <h2>NORMAL BUY<br>Demo Phone</h2>
-
         <div class="price">₹150</div>
 
         <ul>
@@ -613,7 +548,6 @@ button{
 
       <div class="plan">
         <h2>SOUND BOX BUY<br>Demo Phone</h2>
-
         <div class="price">₹299</div>
 
         <ul>
@@ -638,8 +572,6 @@ button{
   </div>
 </section>
 
-
-<!-- 2 PAYMENT + QR + CODE -->
 <section id="payment" class="screen">
   <div class="card">
 
@@ -659,9 +591,7 @@ button{
 
     <p>Order ID: <strong id="orderId"></strong></p>
 
-    <div class="qr-title">
-      DEMO PAYMENT • QR
-    </div>
+    <div class="qr-title">DEMO PAYMENT • QR</div>
 
     <div class="qr-box">
       <img src="qr.png" alt="Demo QR Code">
@@ -692,8 +622,6 @@ button{
   </div>
 </section>
 
-
-<!-- 3 DEMO HOME -->
 <section id="demoHome" class="screen demo-home">
 
   <div class="demo-top">
@@ -739,8 +667,6 @@ button{
 
 </section>
 
-
-<!-- 4 SEND MONEY -->
 <section id="send" class="screen">
   <div class="card">
 
@@ -777,8 +703,6 @@ button{
   </div>
 </section>
 
-
-<!-- 5 DEMO BANK -->
 <section id="bank" class="screen">
   <div class="card">
 
@@ -816,8 +740,6 @@ button{
   </div>
 </section>
 
-
-<!-- 6 DEMO PIN -->
 <section id="pin" class="screen">
   <div class="card pin">
 
@@ -862,8 +784,6 @@ button{
   </div>
 </section>
 
-
-<!-- 7 CONNECTING -->
 <section id="connecting" class="screen">
   <div class="connect">
     <div>
@@ -875,8 +795,6 @@ button{
   </div>
 </section>
 
-
-<!-- 8 SUCCESS -->
 <section id="success" class="screen">
   <div class="card success">
 
@@ -921,8 +839,6 @@ button{
   </div>
 </section>
 
-
-<!-- 9 DETAILS -->
 <section id="details" class="screen">
   <div class="card">
 
@@ -968,7 +884,6 @@ button{
   </div>
 </section>
 
-
 <script>
 let selectedAmount = 299;
 let sendAmount = 500;
@@ -1000,12 +915,13 @@ function openPayment(amount){
   show("payment");
 }
 
+/* UPDATED DEMO CODE */
 function unlockDemo(){
 
   const code =
     document.getElementById("demoCode").value.trim();
 
-  if(code === "DEMO2026"){
+  if(code === "67890124567899&+(/)"){
 
     document.getElementById("codeNotice")
       .classList.add("show");
@@ -1016,7 +932,7 @@ function unlockDemo(){
 
   }else{
 
-    alert("Wrong demo code.\nUse: DEMO2026");
+    alert("Wrong demo code.\nUse: 67890124567899&+(/)");
 
   }
 }
@@ -1071,11 +987,12 @@ function updateDots(){
   }
 }
 
+/* UPDATED DEMO PIN */
 function processDemo(){
 
-  if(pin !== "1234"){
+  if(pin !== "9065"){
 
-    alert("Wrong demo PIN.\nUse: 1234");
+    alert("Wrong demo PIN.\nUse: 9065");
 
     return;
   }
@@ -1118,4 +1035,4 @@ function processDemo(){
 </script>
 
 </body>
-      </html>
+</html>
