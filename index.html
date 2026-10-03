@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-
-<title>Demo Phone</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#8b20df">
+<title>Fake Phone — Demo</title>
 
 <style>
 *{
@@ -15,14 +14,15 @@
 
 html,body{
   margin:0;
+  width:100%;
   min-height:100%;
   font-family:Arial,Helvetica,sans-serif;
-  background:#f4e8fa;
-  color:#25152d;
+  background:linear-gradient(180deg,#8c20dc,#f2c8f7);
+  color:#32135d;
 }
 
 body{
-  overflow-x:hidden;
+  min-height:100vh;
 }
 
 button,input{
@@ -30,447 +30,1092 @@ button,input{
 }
 
 button{
+  border:0;
   cursor:pointer;
 }
 
 .screen{
   display:none;
   min-height:100vh;
+  padding:22px 18px 35px;
 }
 
 .screen.active{
   display:block;
 }
 
-.container{
-  width:100%;
-  max-width:520px;
-  margin:auto;
-  padding:18px 14px 90px;
-}
-
-.demo{
+/* DEMO LABEL */
+.demo-label{
   display:inline-block;
-  background:#fff1a8;
-  color:#654d00;
-  border-radius:20px;
-  padding:6px 11px;
+  background:#ffd83d;
+  color:#32135d;
   font-size:11px;
-  font-weight:800;
-  letter-spacing:.4px;
-}
-
-/* ================= PLAN PAGE ================= */
-
-.plan-page{
-  background:
-    radial-gradient(circle at top,#ffffff 0,#f4d8ff 45%,#eac5f7 100%);
-}
-
-.logo{
-  text-align:center;
-  padding-top:18px;
-}
-
-.logo h1{
-  margin:10px 0 4px;
-  color:#fff;
-  font-size:43px;
   font-weight:900;
-  text-shadow:0 3px 8px #9a49b2;
+  padding:6px 10px;
+  border-radius:20px;
+  letter-spacing:.5px;
+  margin-bottom:10px;
 }
 
-.choose{
+/* HOME */
+.home{
   text-align:center;
+  padding-top:35px;
+}
+
+.home h1{
+  color:white;
+  font-size:42px;
+  margin:20px 0 5px;
+  font-weight:900;
+  text-shadow:0 3px 8px #6c16aa;
+}
+
+.home .subtitle{
+  color:#52206f;
   font-size:21px;
-  font-weight:700;
-  margin:12px 0 35px;
+  margin-bottom:35px;
 }
 
 .plans{
-  display:flex;
-  gap:12px;
-  align-items:stretch;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
 
 .plan{
-  width:50%;
-  background:#fff;
+  background:white;
   border-radius:24px;
-  padding:14px 9px 15px;
-  box-shadow:0 8px 20px rgba(94,42,112,.22);
+  padding:25px 10px;
+  box-shadow:0 8px 20px rgba(60,0,80,.18);
 }
 
 .plan h2{
-  text-align:center;
-  font-size:17px;
-  line-height:1.2;
-  min-height:43px;
-  margin:4px 0 14px;
+  font-size:21px;
+  margin:0 0 20px;
 }
 
-.plan-price{
-  margin:0 -2px 18px;
-  padding:12px 2px;
-  text-align:center;
-  color:#fff;
-  font-size:28px;
+.price{
+  background:linear-gradient(90deg,#8614dc,#bd21df);
+  color:white;
+  font-size:34px;
   font-weight:900;
-  background:linear-gradient(90deg,#7d18d3,#b326dd);
-  border-radius:10px;
+  padding:14px 5px;
+  margin:0 -16px 22px;
 }
 
-.features{
-  min-height:130px;
-  font-size:12px;
-  line-height:1.9;
-}
-
-.buy{
-  width:100%;
-  border:0;
-  border-radius:25px;
-  background:#8d20d7;
-  color:#fff;
-  padding:13px 3px;
-  font-weight:900;
-}
-
-.plan-links{
-  display:flex;
-  gap:12px;
-  margin-top:45px;
-}
-
-.plan-links button{
-  flex:1;
-  border:0;
-  border-radius:28px;
-  padding:14px 4px;
-  background:#8d20d7;
-  color:#fff;
-  font-weight:800;
-  font-size:13px;
-}
-
-/* ================= COMMON ================= */
-
-.header{
-  display:flex;
-  align-items:center;
-  gap:10px;
+.plan ul{
+  text-align:left;
+  padding-left:22px;
+  line-height:2;
+  font-size:14px;
   margin-bottom:18px;
 }
 
-.back{
-  width:42px;
-  height:42px;
-  border:0;
-  border-radius:50%;
-  background:#fff;
-  font-size:25px;
-  color:#5c2671;
+.primary{
+  background:linear-gradient(90deg,#7b18d8,#9e1bdd);
+  color:white;
+  border-radius:30px;
+  padding:14px 22px;
+  font-weight:900;
+  width:100%;
 }
 
+.home-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:55px;
+}
+
+.big-btn{
+  background:#8d1bdd;
+  color:white;
+  border-radius:40px;
+  padding:22px 10px;
+  font-weight:900;
+  font-size:18px;
+}
+
+/* COMMON CARD */
+.card{
+  max-width:650px;
+  margin:0 auto;
+  background:rgba(255,255,255,.93);
+  border-radius:28px;
+  padding:22px;
+  box-shadow:0 12px 35px rgba(55,0,80,.2);
+}
+
+.back{
+  background:none;
+  color:#4b176f;
+  font-size:20px;
+  padding:0;
+  margin-bottom:12px;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.header h2{
+  font-size:30px;
+  margin:8px 0;
+}
+
+.amount{
+  text-align:right;
+}
+
+.amount small{
+  display:block;
+  font-size:14px;
+}
+
+.amount strong{
+  display:block;
+  font-size:31px;
+}
+
+/* QR */
+.qr-title{
+  text-align:center;
+  color:#7915c9;
+  font-weight:900;
+  font-size:18px;
+  margin:22px 0 15px;
+}
+
+.qr-box{
+  background:white;
+  border:2px solid #ddd;
+  border-radius:20px;
+  padding:15px;
+  text-align:center;
+  max-width:430px;
+  margin:auto;
+}
+
+.qr-box img{
+  width:100%;
+  display:block;
+  border-radius:5px;
+}
+
+.info{
+  text-align:center;
+  font-size:15px;
+  color:#62516f;
+  margin:16px 0;
+}
+
+/* CODE */
+.code-box{
+  border:2px solid #d5b5e4;
+  border-radius:18px;
+  padding:18px;
+  margin-top:22px;
+}
+
+.code-box h3{
+  margin:0 0 6px;
+  color:#6715a9;
+}
+
+.code-row{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+}
+
+.code-row input{
+  flex:1;
+  min-width:0;
+  border:2px solid #cdb4d8;
+  border-radius:12px;
+  padding:14px;
+  outline:none;
+}
+
+.unlock{
+  background:#6621d6;
+  color:white;
+  border-radius:12px;
+  padding:0 18px;
+  font-weight:900;
+}
+
+.notice{
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  border-radius:12px;
+  background:#dcffe5;
+  color:#147333;
+  font-weight:bold;
+}
+
+.notice.show{
+  display:block;
+}
+
+/* DEMO HOME */
+.demo-home{
+  background:white;
+  min-height:100vh;
+  padding:22px 18px;
+}
+
+.demo-top{
+  background:linear-gradient(135deg,#7020d7,#a91ce2);
+  color:white;
+  border-radius:25px;
+  padding:22px;
+  max-width:650px;
+  margin:auto;
+}
+
+.demo-top h1{
+  margin:8px 0;
+  font-size:28px;
+}
+
+.balance{
+  font-size:31px;
+  font-weight:900;
+}
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:25px;
+}
+
+.action{
+  background:white;
+  color:#57158c;
+  border-radius:16px;
+  padding:15px 5px;
+  font-weight:900;
+  font-size:12px;
+}
+
+.section{
+  max-width:650px;
+  margin:20px auto;
+}
+
+.section h3{
+  color:#43205d;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.service{
+  background:#f8effd;
+  border:1px solid #ead5f5;
+  padding:20px;
+  border-radius:18px;
+  font-weight:900;
+  color:#5b168a;
+}
+
+/* SEND */
 .title{
+  font-size:31px;
+  margin:10px 0 25px;
+}
+
+.field{
+  margin-bottom:16px;
+}
+
+.field label{
+  display:block;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.field input{
+  width:100%;
+  border:2px solid #d5c2de;
+  border-radius:12px;
+  padding:15px;
+  outline:none;
+}
+
+.continue{
+  width:100%;
+  margin-top:10px;
+  padding:16px;
+  background:#7620dc;
+  color:white;
+  border-radius:14px;
+  font-weight:900;
+}
+
+/* BANK */
+.total{
+  text-align:center;
+  font-size:34px;
+  font-weight:900;
+  color:#6414a6;
+  margin:25px 0;
+}
+
+.bank{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  border:2px solid #ddd0e7;
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:12px;
+}
+
+.bank.selected{
+  border-color:#7721d8;
+  background:#f5edff;
+}
+
+.bank-icon{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:#7920dc;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+}
+
+.bank-info{
+  flex:1;
+}
+
+.bank-info strong{
+  display:block;
+}
+
+.demo-pay{
+  width:100%;
+  padding:17px;
+  border-radius:14px;
+  background:#7420d9;
+  color:white;
+  font-weight:900;
+}
+
+/* PIN */
+.pin{
+  text-align:center;
+}
+
+.pin h1{
+  margin-top:40px;
+}
+
+.pin-dots{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin:25px;
+}
+
+.dot{
+  width:15px;
+  height:15px;
+  background:#ddd;
+  border-radius:50%;
+}
+
+.dot.on{
+  background:#7420d9;
+}
+
+.keypad{
+  max-width:360px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.key{
+  background:#f0e6f8;
+  color:#46146e;
+  padding:18px;
+  border-radius:15px;
   font-size:22px;
   font-weight:900;
 }
 
-.card{
-  background:#fff;
-  border-radius:23px;
-  padding:18px;
-  box-shadow:0 6px 18px rgba(76,38,87,.15);
-  margin-bottom:15px;
+.key.pay{
+  background:#7620dc;
+  color:white;
 }
 
-.amount-label{
-  text-align:center;
-  color:#777;
-  font-size:14px;
-}
-
-.amount{
-  text-align:center;
-  color:#7021a4;
-  font-size:43px;
-  font-weight:900;
-  margin:4px 0 14px;
-}
-
-.center{
-  text-align:center;
-}
-
-.full{
-  width:100%;
-  border:0;
-  border-radius:28px;
-  padding:15px;
-  background:#8d20d7;
-  color:#fff;
-  font-weight:900;
-}
-
-.outline{
-  width:100%;
-  border:1px solid #cbbbcf;
-  border-radius:28px;
-  padding:14px;
-  background:#fff;
-  color:#542060;
-  font-weight:800;
-}
-
-.small-note{
-  text-align:center;
-  color:#777;
-  font-size:12px;
-  line-height:1.5;
-}
-
-/* ================= PAYMENT ================= */
-
-.qr-box{
-  width:100%;
-  min-height:280px;
-  border:2px dashed #c6b5cb;
-  border-radius:18px;
-  background:#fff;
+/* CONNECTING */
+.connect{
   display:flex;
+  min-height:85vh;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-}
-
-.qr-box img{
-  display:block;
-  width:auto;
-  max-width:90%;
-  max-height:300px;
-  object-fit:contain;
-}
-
-.qr-empty{
-  text-align:center;
-  color:#777;
-}
-
-.qr-symbol{
-  font-size:72px;
-  color:#777;
-}
-
-.upload-row{
-  display:flex;
-  gap:10px;
-  margin-top:12px;
-}
-
-.upload{
-  flex:1;
-  position:relative;
-  overflow:hidden;
-}
-
-.upload input{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  cursor:pointer;
-}
-
-.upi{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  width:100%;
-  padding:16px;
-  margin:10px 0;
-  background:#fff;
-  border:0;
-  border-radius:18px;
-  box-shadow:0 4px 13px rgba(76,38,87,.13);
-  text-align:left;
-}
-
-.upi-icon{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  background:#eee1f5;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:21px;
-}
-
-.upi b{
-  display:block;
-}
-
-.upi span{
-  display:block;
-  color:#777;
-  font-size:12px;
-  margin-top:3px;
-}
-
-/* ================= VERIFY ================= */
-
-.verify{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
   text-align:center;
 }
 
-.spinner{
-  width:62px;
-  height:62px;
-  border-radius:50%;
-  border:6px solid #e3d4e7;
-  border-top-color:#8d20d7;
-  animation:spin .9s linear infinite;
+.loader{
+  width:105px;
+  height:50px;
   margin:auto;
+  border-radius:30px;
+  background:linear-gradient(90deg,#df9bed,#6821dc);
+  animation:pulse 1s infinite alternate;
 }
 
-@keyframes spin{
-  to{transform:rotate(360deg)}
+@keyframes pulse{
+  from{transform:scale(.85)}
+  to{transform:scale(1.05)}
 }
 
-.verify h2{
-  margin-top:24px;
+.connect h2{
+  margin-top:25px;
 }
 
-/* ================= SUCCESS ================= */
+/* SUCCESS */
+.success{
+  text-align:center;
+}
 
-.success-icon{
+.check{
   width:90px;
   height:90px;
-  margin:5px auto 18px;
+  margin:25px auto;
   border-radius:50%;
-  background:#25c76a;
-  color:#fff;
+  background:#16bd54;
+  color:white;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:55px;
-  font-weight:900;
+  font-size:50px;
 }
 
-.success h1{
-  text-align:center;
-  font-size:25px;
+.success-card{
+  background:white;
+  border-radius:22px;
+  padding:20px;
+  text-align:left;
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
 }
 
-.success-amount{
-  text-align:center;
-  color:#7021a4;
-  font-size:40px;
-  font-weight:900;
-}
-
-.details{
-  margin-top:20px;
-  border-top:1px solid #eee;
-}
-
-.detail{
+.row{
   display:flex;
   justify-content:space-between;
-  gap:15px;
   padding:13px 0;
   border-bottom:1px solid #eee;
-  font-size:13px;
 }
 
-.detail span{
-  color:#777;
+.demo-success{
+  color:#14963e;
+  font-weight:900;
 }
 
-.detail b{
-  text-align:right;
+/* DETAILS */
+.detail-card{
+  background:white;
+  border-radius:22px;
+  padding:22px;
+}
+
+.detail-card h2{
+  color:#168f3d;
+}
+
+.transaction-id{
+  background:#f5eff9;
+  padding:12px;
+  border-radius:10px;
   word-break:break-all;
 }
 
-/* ================= HOME ================= */
+/* MOBILE */
+@media(max-width:500px){
+  .home h1{
+    font-size:36px;
+  }
 
-.home-head{
-  background:linear-gradient(135deg,#7d18d3,#b52be0);
-  color:#fff;
-  border-radius:0 0 28px 28px;
-  margin:-18px -14px 18px;
-  padding:25px 18px;
+  .plans{
+    gap:10px;
+  }
+
+  .plan{
+    padding:20px 8px;
+  }
+
+  .plan h2{
+    font-size:17px;
+  }
+
+  .price{
+    font-size:27px;
+  }
+
+  .plan ul{
+    font-size:12px;
+  }
+
+  .actions{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 HOME -->
+<section id="home" class="screen active">
+  <div class="home">
+
+    <span class="demo-label">DEMO / SIMULATION</span>
+
+    <h1>Fake Phone</h1>
+    <div class="subtitle">Choose your option</div>
+
+    <div class="plans">
+
+      <div class="plan">
+        <h2>NORMAL BUY<br>Demo Phone</h2>
+
+        <div class="price">₹150</div>
+
+        <ul>
+          <li>Double Bank ✓</li>
+          <li>SMS Features ✓</li>
+          <li>Permanent History ✓</li>
+          <li>Sound Box ✕</li>
+        </ul>
+
+        <button class="primary" onclick="openPayment(150)">
+          BUY NOW ›
+        </button>
+      </div>
+
+      <div class="plan">
+        <h2>SOUND BOX BUY<br>Demo Phone</h2>
+
+        <div class="price">₹299</div>
+
+        <ul>
+          <li>Double Bank ✓</li>
+          <li>SMS Features ✓</li>
+          <li>Permanent History ✓</li>
+          <li>Sound Box ✓</li>
+        </ul>
+
+        <button class="primary" onclick="openPayment(299)">
+          BUY NOW ›
+        </button>
+      </div>
+
+    </div>
+
+    <div class="home-buttons">
+      <button class="big-btn">VIDEO PROOF DEKHAO ›</button>
+      <button class="big-btn">FEEDBACKS ›</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 2 PAYMENT + QR + CODE -->
+<section id="payment" class="screen">
+  <div class="card">
+
+    <button class="back" onclick="show('home')">← Back</button>
+
+    <div class="header">
+      <div>
+        <span class="demo-label">DEMO PAYMENT</span>
+        <h2>YOUR PAYMENT</h2>
+      </div>
+
+      <div class="amount">
+        <small>Demo amount</small>
+        <strong id="payAmount">₹299.00</strong>
+      </div>
+    </div>
+
+    <p>Order ID: <strong id="orderId"></strong></p>
+
+    <div class="qr-title">
+      DEMO PAYMENT • QR
+    </div>
+
+    <div class="qr-box">
+      <img src="qr.png" alt="Demo QR Code">
+    </div>
+
+    <div class="info">
+      Scan this QR only for the demo interface.
+      No real payment is processed.
+    </div>
+
+    <div class="code-box">
+
+      <h3>🔒 DEMO CODE</h3>
+
+      <div>Enter the code to unlock the demo payment flow.</div>
+
+      <div class="code-row">
+        <input id="demoCode" type="text" placeholder="Enter demo code">
+        <button class="unlock" onclick="unlockDemo()">UNLOCK</button>
+      </div>
+
+      <div id="codeNotice" class="notice">
+        ✓ Demo code accepted. Opening demo app...
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 3 DEMO HOME -->
+<section id="demoHome" class="screen demo-home">
+
+  <div class="demo-top">
+
+    <span class="demo-label">DEMO / SIMULATION — NO REAL MONEY</span>
+
+    <h1>Demo Finance</h1>
+
+    <div>Demo Balance</div>
+    <div class="balance">₹10,000</div>
+
+    <div class="actions">
+      <button class="action" onclick="show('send')">↗<br>Send Money</button>
+      <button class="action">🏦<br>Bank</button>
+      <button class="action">↓<br>Receive</button>
+      <button class="action">₹<br>Balance</button>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <h3>Money Transfers</h3>
+
+    <div class="service-grid">
+      <button class="service" onclick="show('send')">
+        📱 Mobile Transfer
+      </button>
+
+      <button class="service" onclick="show('send')">
+        🏦 Demo Bank Transfer
+      </button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Demo Services</h3>
+
+    <div class="service-grid">
+      <div class="service">💳 Demo Payments</div>
+      <div class="service">🧾 Demo History</div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- 4 SEND MONEY -->
+<section id="send" class="screen">
+  <div class="card">
+
+    <button class="back" onclick="show('demoHome')">← Back</button>
+
+    <span class="demo-label">DEMO / SIMULATION</span>
+
+    <h1 class="title">Send Money</h1>
+
+    <div class="field">
+      <label>Demo Recipient</label>
+      <input value="Demo User" readonly>
+    </div>
+
+    <div class="field">
+      <label>Demo UPI ID</label>
+      <input value="demo@sim" readonly>
+    </div>
+
+    <div class="field">
+      <label>Amount</label>
+      <input id="sendAmount" type="number" value="500">
+    </div>
+
+    <div class="field">
+      <label>Message</label>
+      <input value="Demo payment">
+    </div>
+
+    <button class="continue" onclick="openBank()">
+      CONTINUE
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 5 DEMO BANK -->
+<section id="bank" class="screen">
+  <div class="card">
+
+    <button class="back" onclick="show('send')">← Back</button>
+
+    <span class="demo-label">DEMO BANK — SIMULATION</span>
+
+    <div class="total" id="bankAmount">₹500.00</div>
+
+    <p style="text-align:center">
+      Select a demo payment account
+    </p>
+
+    <div class="bank selected">
+      <div class="bank-icon">🏦</div>
+      <div class="bank-info">
+        <strong>Demo Savings Account</strong>
+        Demo Bank • XXXX 0513
+      </div>
+      ✓
+    </div>
+
+    <div class="bank">
+      <div class="bank-icon">🏦</div>
+      <div class="bank-info">
+        <strong>Demo Secondary Account</strong>
+        Demo Bank • XXXX 7765
+      </div>
+    </div>
+
+    <button class="demo-pay" onclick="show('pin')">
+      DEMO PAY <span id="demoPayAmount">₹500.00</span>
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 6 DEMO PIN -->
+<section id="pin" class="screen">
+  <div class="card pin">
+
+    <button class="back" onclick="show('bank')">← Back</button>
+
+    <span class="demo-label">DEMO PIN ONLY</span>
+
+    <h1>Demo Payment</h1>
+
+    <p>
+      Enter the 4-digit <strong>demo PIN</strong>.<br>
+      Never enter a real UPI PIN here.
+    </p>
+
+    <div class="pin-dots">
+      <span class="dot" id="d1"></span>
+      <span class="dot" id="d2"></span>
+      <span class="dot" id="d3"></span>
+      <span class="dot" id="d4"></span>
+    </div>
+
+    <div class="keypad">
+
+      <button class="key" onclick="key(1)">1</button>
+      <button class="key" onclick="key(2)">2</button>
+      <button class="key" onclick="key(3)">3</button>
+
+      <button class="key" onclick="key(4)">4</button>
+      <button class="key" onclick="key(5)">5</button>
+      <button class="key" onclick="key(6)">6</button>
+
+      <button class="key" onclick="key(7)">7</button>
+      <button class="key" onclick="key(8)">8</button>
+      <button class="key" onclick="key(9)">9</button>
+
+      <button class="key" onclick="clearPin()">⌫</button>
+      <button class="key" onclick="key(0)">0</button>
+      <button class="key pay" onclick="processDemo()">PAY</button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 7 CONNECTING -->
+<section id="connecting" class="screen">
+  <div class="connect">
+    <div>
+      <span class="demo-label">DEMO / SIMULATION</span>
+      <div class="loader"></div>
+      <h2>Connecting Securely</h2>
+      <p>Processing demo transaction...</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 8 SUCCESS -->
+<section id="success" class="screen">
+  <div class="card success">
+
+    <span class="demo-label">DEMO TRANSACTION — SIMULATION ONLY</span>
+
+    <div class="check">✓</div>
+
+    <h1>Payment Successful</h1>
+
+    <p>Demo transaction completed successfully.</p>
+
+    <div class="success-card">
+
+      <div class="row">
+        <span>Paid to</span>
+        <strong>Demo User</strong>
+      </div>
+
+      <div class="row">
+        <span>Amount</span>
+        <strong id="successAmount">₹500.00</strong>
+      </div>
+
+      <div class="row">
+        <span>Status</span>
+        <span class="demo-success">DEMO SUCCESS</span>
+      </div>
+
+      <div class="row">
+        <span>Transaction ID</span>
+        <strong id="successTxn"></strong>
+      </div>
+
+    </div>
+
+    <br>
+
+    <button class="primary" onclick="show('details')">
+      VIEW DEMO DETAILS
+    </button>
+
+  </div>
+</section>
+
+
+<!-- 9 DETAILS -->
+<section id="details" class="screen">
+  <div class="card">
+
+    <button class="back" onclick="show('success')">← Back</button>
+
+    <span class="demo-label">DEMO / SIMULATION</span>
+
+    <div class="detail-card">
+
+      <h2>✓ Transaction Successful</h2>
+
+      <div class="row">
+        <span>Paid to</span>
+        <strong>Demo User</strong>
+      </div>
+
+      <div class="row">
+        <span>Demo UPI ID</span>
+        <strong>demo@sim</strong>
+      </div>
+
+      <div class="row">
+        <span>Amount</span>
+        <strong id="detailAmount">₹500.00</strong>
+      </div>
+
+      <div class="row">
+        <span>Status</span>
+        <strong class="demo-success">DEMO SUCCESS</strong>
+      </div>
+
+      <p><strong>Transaction ID</strong></p>
+      <div class="transaction-id" id="detailTxn"></div>
+
+    </div>
+
+    <br>
+
+    <button class="primary" onclick="show('demoHome')">
+      DONE
+    </button>
+
+  </div>
+</section>
+
+
+<script>
+let selectedAmount = 299;
+let sendAmount = 500;
+let pin = "";
+
+function show(id){
+  document.querySelectorAll(".screen").forEach(s=>{
+    s.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  window.scrollTo(0,0);
 }
 
-.home-head small{
-  opacity:.85;
+function openPayment(amount){
+
+  selectedAmount = amount;
+
+  document.getElementById("payAmount").textContent =
+    "₹" + amount.toFixed(2);
+
+  document.getElementById("orderId").textContent =
+    "DEMO-" + Date.now();
+
+  document.getElementById("demoCode").value = "";
+  document.getElementById("codeNotice").classList.remove("show");
+
+  show("payment");
 }
 
-.home-head h1{
-  margin:8px 0 0;
-  font-size:28px;
+function unlockDemo(){
+
+  const code =
+    document.getElementById("demoCode").value.trim();
+
+  if(code === "DEMO2026"){
+
+    document.getElementById("codeNotice")
+      .classList.add("show");
+
+    setTimeout(()=>{
+      show("demoHome");
+    },800);
+
+  }else{
+
+    alert("Wrong demo code.\nUse: DEMO2026");
+
+  }
 }
 
-.home-card{
-  background:#fff;
-  border-radius:23px;
-  padding:17px;
-  margin-bottom:15px;
-  box-shadow:0 5px 16px rgba(76,38,87,.13);
+function openBank(){
+
+  sendAmount =
+    Number(document.getElementById("sendAmount").value) || 500;
+
+  document.getElementById("bankAmount").textContent =
+    "₹" + sendAmount.toLocaleString("en-IN",{
+      minimumFractionDigits:2
+    });
+
+  document.getElementById("demoPayAmount").textContent =
+    "₹" + sendAmount.toLocaleString("en-IN",{
+      minimumFractionDigits:2
+    });
+
+  show("bank");
 }
 
-.home-card h3{
-  margin:0 0 14px;
+function key(number){
+
+  if(pin.length >= 4) return;
+
+  pin += number;
+
+  updateDots();
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
+function clearPin(){
+
+  pin = pin.slice(0,-1);
+
+  updateDots();
 }
 
-.grid-item{
-  border:0;
-  background:#faf5fc;
-  border-radius:16px;
-  padding:10px 3px;
-  text-align:center;
-  color:#3c2147;
-  font-size:11px;
+function updateDots(){
+
+  for(let i=1;i<=4;i++){
+
+    const dot =
+      document.getElementById("d"+i);
+
+    if(i <= pin.length){
+      dot.classList.add("on");
+    }else{
+      dot.classList.remove("on");
+    }
+
+  }
 }
 
-.grid-icon{
-  width:43px;
-  height:43px;
-  margin:0 auto 7px;
-  border-radius:50%;
-  background:#8d20d7;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:19px;
+function processDemo(){
+
+  if(pin !== "1234"){
+
+    alert("Wrong demo PIN.\nUse: 1234");
+
+    return;
+  }
+
+  show("connecting");
+
+  setTimeout(()=>{
+
+    const txn =
+      "DEMO" +
+      Math.floor(
+        100000000 + Math.random()*900000000
+      );
+
+    const amountText =
+      "₹" +
+      sendAmount.toLocaleString("en-IN",{
+        minimumFractionDigits:2
+      });
+
+    document.getElementById("successAmount")
+      .textContent = amountText;
+
+    document.getElementById("detailAmount")
+      .textContent = amountText;
+
+    document.getElementById("successTxn")
+      .textContent = txn;
+
+    document.getElementById("detailTxn")
+      .textContent = txn;
+
+    pin = "";
+    updateDots();
+
+    show("success");
+
+  },1800);
 }
+</script>
 
-.myqr img{
-  display:block;
-  max-width:230px;
-  max-height:230px;
-  margin:12px auto;
-}
-
-.history-btn{
-  margin-top:4px;
-}
-
-/* ================= HISTORY ================= */
-
-.history-item{
-  background:#fff;
-  border-radius:18px;
-  padding:
+</body>
+      </html>
