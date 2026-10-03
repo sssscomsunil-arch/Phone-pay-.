@@ -23,31 +23,19 @@ html,body{
   color:#101044;
 }
 
-body{
-  min-height:100vh;
-}
+body{min-height:100vh}
 
-button,input{
-  font:inherit;
-}
-
-button{
-  border:0;
-  cursor:pointer;
-}
+button,input{font:inherit}
+button{border:0;cursor:pointer}
 
 .screen{
   display:none;
   min-height:100vh;
 }
 
-.screen.active{
-  display:block;
-}
+.screen.active{display:block}
 
-/* =========================
-   START / BUY SCREEN
-========================= */
+/* START */
 
 .start-screen{
   background:linear-gradient(180deg,#7620df,#f1c8f8);
@@ -137,9 +125,7 @@ button{
   font-weight:900;
 }
 
-/* =========================
-   PAYMENT SCREEN
-========================= */
+/* PAYMENT */
 
 .payment-screen{
   padding:20px;
@@ -174,13 +160,9 @@ button{
   margin:8px 0;
 }
 
-.amount{
-  text-align:right;
-}
+.amount{text-align:right}
 
-.amount small{
-  display:block;
-}
+.amount small{display:block}
 
 .amount strong{
   display:block;
@@ -256,13 +238,9 @@ button{
   font-weight:bold;
 }
 
-.notice.show{
-  display:block;
-}
+.notice.show{display:block}
 
-/* =========================
-   PAYFAST DEMO HOME
-========================= */
+/* PAYFAST HOME */
 
 .demo-home{
   background:#fff;
@@ -412,15 +390,7 @@ button{
   font-size:16px;
 }
 
-.balance-action strong{
-  font-size:16px;
-}
-
-.linked{
-  color:#39e59c;
-}
-
-/* start now */
+.linked{color:#39e59c}
 
 .start-now{
   display:block;
@@ -438,17 +408,11 @@ button{
   font-weight:900;
 }
 
-/* =========================
-   HOME CONTENT
-========================= */
-
 .home-content{
   padding:58px 18px 0;
 }
 
-.home-section{
-  margin-bottom:25px;
-}
+.home-section{margin-bottom:25px}
 
 .section-title-row{
   display:flex;
@@ -579,9 +543,7 @@ button{
   font-size:15px;
 }
 
-/* =========================
-   TRANSACTIONS
-========================= */
+/* TRANSACTIONS */
 
 .transaction{
   background:#fff;
@@ -605,18 +567,14 @@ button{
   font-size:22px;
 }
 
-.tx-info{
-  flex:1;
-}
+.tx-info{flex:1}
 
 .tx-info strong{
   display:block;
   font-size:16px;
 }
 
-.tx-info small{
-  color:#777;
-}
+.tx-info small{color:#777}
 
 .tx-amount{
   text-align:right;
@@ -630,9 +588,7 @@ button{
   font-weight:normal;
 }
 
-/* =========================
-   BOTTOM NAV
-========================= */
+/* NAV */
 
 .bottom-nav{
   position:fixed;
@@ -661,9 +617,7 @@ button{
   margin-bottom:3px;
 }
 
-.nav-item.active{
-  color:#5318d1;
-}
+.nav-item.active{color:#5318d1}
 
 .qr-button{
   width:65px;
@@ -678,9 +632,7 @@ button{
   font-size:29px;
 }
 
-/* =========================
-   SEND / BANK / PIN
-========================= */
+/* FLOW */
 
 .flow-screen{
   min-height:100vh;
@@ -693,698 +645,9 @@ button{
   margin:10px 0 25px;
 }
 
-.field{
-  margin-bottom:16px;
-}
+.field{margin-bottom:16px}
 
 .field label{
   display:block;
   font-weight:800;
-  margin-bottom:7px;
-}
-
-.field input{
-  width:100%;
-  border:2px solid #d5c2de;
-  border-radius:12px;
-  padding:15px;
-  outline:none;
-}
-
-.continue,
-.demo-pay{
-  width:100%;
-  padding:16px;
-  background:#7620dc;
-  color:#fff;
-  border-radius:14px;
-  font-weight:900;
-}
-
-.total{
-  text-align:center;
-  font-size:34px;
-  font-weight:900;
-  color:#6414a6;
-  margin:25px 0;
-}
-
-.bank{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  border:2px solid #ddd0e7;
-  border-radius:16px;
-  padding:18px;
-  margin-bottom:12px;
-}
-
-.bank.selected{
-  border-color:#7721d8;
-  background:#f5edff;
-}
-
-.bank-icon{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  background:#7920dc;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.bank-info{
-  flex:1;
-}
-
-.bank-info strong{
-  display:block;
-}
-
-.pin{
-  text-align:center;
-}
-
-.pin h1{
-  margin-top:40px;
-}
-
-.pin-dots{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin:25px;
-}
-
-.dot{
-  width:15px;
-  height:15px;
-  background:#ddd;
-  border-radius:50%;
-}
-
-.dot.on{
-  background:#7420d9;
-}
-
-.keypad{
-  max-width:360px;
-  margin:30px auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.key{
-  background:#f0e6f8;
-  color:#46146e;
-  padding:18px;
-  border-radius:15px;
-  font-size:22px;
-  font-weight:900;
-}
-
-.key.pay{
-  background:#7620dc;
-  color:#fff;
-}
-
-/* =========================
-   SUCCESS
-========================= */
-
-.connect{
-  display:flex;
-  min-height:85vh;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.loader{
-  width:105px;
-  height:50px;
-  margin:auto;
-  border-radius:30px;
-  background:linear-gradient(90deg,#df9bed,#6821dc);
-  animation:pulse 1s infinite alternate;
-}
-
-@keyframes pulse{
-  from{transform:scale(.85)}
-  to{transform:scale(1.05)}
-}
-
-.success{
-  text-align:center;
-}
-
-.check{
-  width:90px;
-  height:90px;
-  margin:25px auto;
-  border-radius:50%;
-  background:#16bd54;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:50px;
-}
-
-.success-card,
-.detail-card{
-  background:#fff;
-  border-radius:22px;
-  padding:20px;
-  text-align:left;
-  box-shadow:0 6px 20px rgba(0,0,0,.1);
-}
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  padding:13px 0;
-  border-bottom:1px solid #eee;
-  gap:10px;
-}
-
-.demo-success{
-  color:#14963e;
-  font-weight:900;
-}
-
-.transaction-id{
-  background:#f5eff9;
-  padding:12px;
-  border-radius:10px;
-  word-break:break-all;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:500px){
-
-  .app-header{
-    padding:22px 14px 82px;
-  }
-
-  .brand-name{
-    font-size:25px;
-  }
-
-  .brand-icon{
-    width:48px;
-    height:48px;
-  }
-
-  .icon-circle{
-    width:40px;
-    height:40px;
-  }
-
-  .balance-card{
-    left:14px;
-    right:14px;
-  }
-
-  .balance-amount{
-    font-size:34px;
-  }
-
-  .cashback{
-    font-size:16px;
-  }
-
-  .home-content{
-    padding-left:14px;
-    padding-right:14px;
-  }
-
-  .transfer-icon{
-    width:62px;
-    height:62px;
-  }
-
-  .transfer-name{
-    font-size:12px;
-  }
-
-  .section-title{
-    font-size:23px;
-  }
-
-  .category-grid{
-    gap:6px;
-  }
-
-  .loan-grid{
-    gap:6px;
-  }
-
-  .loan,
-  .category{
-    font-size:11px;
-  }
-
-  .loan-icon,
-  .category-icon{
-    font-size:25px;
-  }
-
-  .start-now{
-    font-size:22px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- =========================
-     START SCREEN
-========================= -->
-
-<section id="home" class="screen active start-screen">
-
-  <span class="demo-label">DEMO / SIMULATION</span>
-
-  <h1>Fake Phone</h1>
-
-  <div class="subtitle">
-    Choose your option
-  </div>
-
-  <div class="plans">
-
-    <div class="plan">
-
-      <h2>NORMAL BUY<br>Demo Phone</h2>
-
-      <div class="price">₹150</div>
-
-      <ul>
-        <li>Double Bank ✓</li>
-        <li>SMS Features ✓</li>
-        <li>Permanent History ✓</li>
-        <li>Sound Box ✕</li>
-      </ul>
-
-      <button class="primary"
-      onclick="openPayment(150)">
-        BUY NOW ›
-      </button>
-
-    </div>
-
-    <div class="plan">
-
-      <h2>SOUND BOX BUY<br>Demo Phone</h2>
-
-      <div class="price">₹299</div>
-
-      <ul>
-        <li>Double Bank ✓</li>
-        <li>SMS Features ✓</li>
-        <li>Permanent History ✓</li>
-        <li>Sound Box ✓</li>
-      </ul>
-
-      <button class="primary"
-      onclick="openPayment(299)">
-        BUY NOW ›
-      </button>
-
-    </div>
-
-  </div>
-
-  <div class="home-buttons">
-
-    <button class="big-btn">
-      VIDEO PROOF DEKHAO ›
-    </button>
-
-    <button class="big-btn">
-      FEEDBACKS ›
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     PAYMENT
-========================= -->
-
-<section id="payment"
-class="screen payment-screen">
-
-  <div class="card">
-
-    <button class="back"
-    onclick="show('home')">
-      ← Back
-    </button>
-
-    <div class="header">
-
-      <div>
-
-        <span class="demo-label">
-          DEMO PAYMENT
-        </span>
-
-        <h2>YOUR PAYMENT</h2>
-
-      </div>
-
-      <div class="amount">
-
-        <small>Demo amount</small>
-
-        <strong id="payAmount">
-          ₹299.00
-        </strong>
-
-      </div>
-
-    </div>
-
-    <p>
-      Order ID:
-      <strong id="orderId"></strong>
-    </p>
-
-    <div class="qr-title">
-      DEMO PAYMENT • QR
-    </div>
-
-    <div class="qr-box">
-
-      <img src="qr.png"
-      alt="Demo QR Code">
-
-    </div>
-
-    <div class="info">
-      Scan this QR only for the demo interface.
-      No real payment is processed.
-    </div>
-
-    <div class="code-box">
-
-      <h3>🔒 DEMO CODE</h3>
-
-      <div>
-        Enter the code to unlock the demo payment flow.
-      </div>
-
-      <div class="code-row">
-
-        <input
-        id="demoCode"
-        type="text"
-        placeholder="Enter demo code">
-
-        <button
-        class="unlock"
-        onclick="unlockDemo()">
-          UNLOCK
-        </button>
-
-      </div>
-
-      <div id="codeNotice"
-      class="notice">
-        ✓ Demo code accepted. Opening demo app...
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     NEW PAYFAST HOME SCREEN
-========================= -->
-
-<section id="demoHome"
-class="screen demo-home">
-
-  <!-- HEADER -->
-
-  <div class="app-header">
-
-    <div class="header-row">
-
-      <div class="brand">
-
-        <div class="brand-icon">
-          ◇
-        </div>
-
-        <div>
-          <div class="brand-name">
-            PayFast
-          </div>
-
-          <div class="brand-sub">
-            Simple • Secure • Fast
-          </div>
-        </div>
-
-      </div>
-
-      <div class="header-icons">
-
-        <div class="icon-circle">
-          🔔
-          <span class="notify-dot"></span>
-        </div>
-
-        <div class="icon-circle">
-          👤
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- BALANCE CARD -->
-
-    <div class="balance-card">
-
-      <div class="balance-top">
-
-        <div>
-
-          <div class="balance-title">
-            💳 Total Balance
-          </div>
-
-          <div class="balance-amount">
-            ₹ 5,240.00 👁
-          </div>
-
-        </div>
-
-        <div class="cashback">
-
-          Send Money<br>
-          Get Cashback
-
-          <div class="cashback-pill">
-            Upto ₹100
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="balance-actions">
-
-        <button
-        class="balance-action"
-        onclick="show('send')">
-
-          ⊕ &nbsp; Add Money
-          <span style="float:right">›</span>
-
-        </button>
-
-        <button class="balance-action">
-
-          🏦 &nbsp; Bank Account
-
-          <span class="linked">
-            Linked
-          </span>
-
-          <span style="float:right">
-            ›
-          </span>
-
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- START NOW -->
-
-  <button
-  class="start-now"
-  onclick="show('send')">
-
-    Start Now &nbsp; →
-
-  </button>
-
-
-  <!-- CONTENT -->
-
-  <div class="home-content">
-
-
-    <!-- MONEY TRANSFERS -->
-
-    <div class="home-section">
-
-      <div class="section-title-row">
-
-        <div class="section-title">
-          Money Transfers
-        </div>
-
-        <div class="refer">
-          🎁 Refer & Earn ₹100
-        </div>
-
-      </div>
-
-
-      <div class="transfer-grid">
-
-        <button
-        class="transfer"
-        onclick="show('send')">
-
-          <div class="transfer-icon">
-            📱
-          </div>
-
-          <div class="transfer-name">
-            To Mobile<br>Number
-          </div>
-
-        </button>
-
-
-        <button
-        class="transfer"
-        onclick="show('send')">
-
-          <div class="transfer-icon">
-            🏦
-          </div>
-
-          <div class="transfer-name">
-            To Bank &<br>Self A/c
-          </div>
-
-        </button>
-
-
-        <button
-        class="transfer">
-
-          <div class="transfer-icon">
-            ↓
-          </div>
-
-          <div class="transfer-name">
-            Receive<br>Money
-          </div>
-
-        </button>
-
-
-        <button
-        class="transfer">
-
-          <div class="transfer-icon">
-            ₹
-          </div>
-
-          <div class="transfer-name">
-            Check<br>Balance
-          </div>
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- PROMOS -->
-
-    <div class="promo-grid">
-
-      <div class="promo save">
-        🛡️
-        Start saving in<br>
-        Gold & Silver
-        <span>›</span>
-      </div>
-
-      <div class="promo gold">
-        🪙
-        Daily Gold Savings
-        <span>›</span>
-      </div>
-
-    </div>
-
-
-    <!-- RECHARGE -->
-
-    <div class="home-section">
-
-      <div class="section-title-row">
-
-        <div class="section-title">
-          Recharge & Bills
-        </div>
-
-        <div class="view-all">
-          View All →
-        </div>
-
-      </div>
-
-
-      <div class="category-grid">
-
-        <div class="category">
-          <div class="category-icon">📱</div>
-          Mobile
-        </div>
-
-        <div class="category">
-          <div class="category-icon">📡</div>
-          DTH
-        </
+  margin-bottom:
